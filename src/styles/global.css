@@ -1,0 +1,67 @@
+/* 전체 페이지 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* 네비게이션 스타일 */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 섹션 스타일 */
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#main {
+  background: #f8f9fa;
+}
+
+#about {
+  background: #e9ecef;
+}
+
+#projects {
+  background: #dee2e6;
+}
+
+#contact {
+  background: #ced4da;
+}
+
+/* 푸터 스타일 */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
