@@ -1,19 +1,143 @@
+/* 기본 네비게이션 스타일 */
 .navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: transparent;
+  color: gray;  /* 기본 색상 회색 */
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: white;
+  color: black;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6); /* 빛나는 효과 */
+}
+
+/* 네비바 내부 요소 정렬 */
+.navbar-container {
+  width: 1050px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #333;
+  padding: 0 30px;
+}
+
+/* 로고 스타일 */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.55);  /* 기본 색상 회색 */
+  transition: color 0.3s ease-in-out;
+}
+
+/* 로고 호버 시 */
+.logo:hover {
   color: white;
 }
 
-.navbar ul {
-  list-style: none;
+/* 스크롤 후 로고 색상 변경 */
+.navbar.scrolled .logo {
+  color: black;  /* 스크롤 후 기본 색상 검은색 */
+}
+
+/* 스크롤 후 로고 호버 시 */
+.navbar.scrolled .logo:hover {
+  color: #FF7F00;  /* 주황색 */
+}
+
+/* 네비게이션 링크 */
+.nav-links {
   display: flex;
-  gap: 20px;
+  list-style: none;
+  gap: 40px;
 }
 
-.navbar a {
+.nav-links li {
+  cursor: pointer;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);  /* 기본 색상 회색 */
+  transition: color 0.3s ease-in-out;
+}
+
+/* 네비게이션 링크 호버 시 */
+.nav-links li:hover {
   color: white;
-  text-decoration: none;
+}
+
+/* 스크롤 후 네비게이션 기본 색상 */
+.navbar.scrolled .nav-links li {
+  color: black;  /* 스크롤 후 기본 색상 검은색 */
+}
+
+/* 스크롤 후 네비게이션 호버 시 */
+.navbar.scrolled .nav-links li:hover {
+  color: #FF7F00;  /* 주황색 */
+}
+
+/* 네비게이션 링크 (작아질 때 숨김) */
+@media screen and (max-width: 950px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 250px;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active li {
+    font-size: 18px;
+    color: black;
+  }
+}
+
+/* 🟢 햄버거 버튼 기본적으로 숨김 */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.5);  /* 기본 색상 회색 */
+  z-index: 1100;
+  transition: color 0.3s ease-in-out;
+}
+
+/* 🟢 햄버거 버튼 호버 시 */
+.hamburger:hover {
+  color: white;
+}
+
+/* 🟢 스크롤 후 햄버거 버튼 색상 변경 */
+.navbar.scrolled .hamburger {
+  color: black;
+}
+
+/* 🟢 스크롤 후 햄버거 버튼 호버 시 */
+.navbar.scrolled .hamburger:hover {
+  color: #FF7F00;
+}
+
+/* 🟢 반응형에서 햄버거 버튼 보이게 */
+@media screen and (max-width: 950px) {
+  .hamburger {
+    display: block;
+  }
 }

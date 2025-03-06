@@ -1,12 +1,23 @@
 import React from "react";
-import Home from "./pages/Home";
-import "./App.css"; // 전체적인 스타일 적용
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
+import About from "./components/About";
+import Skill from "./components/Skill";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <>
+      <Navbar />
+      <Main />
+      <About />
+      <Skill />
+      <Projects />
+      <Contact />
+      <Footer />
+    </>
   );
 }
 
