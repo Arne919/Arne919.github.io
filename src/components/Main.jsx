@@ -7,18 +7,14 @@ function Main() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const startTyping = setTimeout(() => {
-      if (index < text.length) {
-        const timeout = setTimeout(() => {
-          setDisplayText((prevText) => prevText + text[index]);
-          setIndex(index + 1);
-        }, 50);
+    if (index < text.length) {
+      const interval = setInterval(() => {
+        setDisplayText((prevText) => prevText + text[index]);
+        setIndex((prevIndex) => prevIndex + 1);
+      }, 50); // 타이핑 속도 조절
 
-        return () => clearTimeout(timeout);
-      }
-    }, 100); // 1초 뒤에 타이핑 시작
-
-    return () => clearTimeout(startTyping);
+      return () => clearInterval(interval);
+    }
   }, [index, text]);
 
   // 📌 특정 섹션으로 스크롤 이동
@@ -30,18 +26,19 @@ function Main() {
 
   return (
     <section id="main" className="main">
-      <div className="typing-container">
-        {displayText.split("\n").map((line, idx) => (
-          <div key={idx} className="typing-line">
-            {line}
-            {idx === displayText.split("\n").length - 1 && <span className="cursor">|</span>}
-          </div>
-        ))}
+      <div className="typeit">
+        <div className="typing-container">
+          {displayText.split("\n").map((line, idx) => (
+            <div key={idx} className="typing-line">
+              {line}
+              {idx === displayText.split("\n").length - 1 && <span className="cursor">|</span>}
+            </div>
+          ))}
+        </div>
       </div>
-      <br />
-      <br />
-      <hr />
-      <br />
+
+      <hr className="custom-hr" /> {/* ✅ className 수정 */}
+
       <p className="description">
         저는 수학 문제 푸는 것을 좋아해서 수학과 전공을 선택하였습니다.<br />
         이후 수학과 비슷한 논리적 사고를 요구하는 코딩에 흥미가 생겼고,<br />

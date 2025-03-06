@@ -1,20 +1,39 @@
 .main {
   text-align: center;
-  padding: 100px 20px;
+  padding: 6rem 0 0 0;
+  min-height: 70vh;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: rebeccapurple;
+}
+
+/* ✅ 타이핑 영역 크기 고정 */
+.typeit {
+  width: 940px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 타이핑 애니메이션 스타일 */
 .typing-container {
   font-size: 36px;
-  font-weight: bold;
+  font-weight: 900;
   display: inline-block;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 /* 줄바꿈 시 적용 */
 .typing-line {
-  display: block; /* 각 줄을 블록 요소로 만듦 */
+  display: block;
   text-align: center;
 }
 
@@ -37,7 +56,7 @@
 .cursor {
   font-size: 50px;
   font-weight: bold;
-  color: orange;
+  color: rgba(255, 255, 255, 0.5);
   animation: blink 0.8s infinite;
   display: inline-block;
 }
@@ -48,39 +67,52 @@
   }
 }
 
+/* ✅ 구분선(hr) 스타일 */
+.custom-hr {
+  width: 20%;
+  height: 0.1rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 3rem auto 1rem auto;
+  border-radius: 10px;
+}
+
 /* 반응형 */
 @media screen and (max-width: 1024px) {
-  .typing-container {
-    font-size: 28px;
+  .typeit {
+    width: 80%;
+    height: 100px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .typing-container {
-    font-size: 24px;
+  .typeit {
+    width: 90%;
+    height: 90px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .typing-container {
-    font-size: 20px;
+  .typeit {
+    width: 95%;
+    height: 80px;
   }
 }
 
-
+/* 버튼 스타일 */
 .more-button {
   margin-top: 20px;
   padding: 12px 24px;
   font-size: 18px;
   font-weight: bold;
   color: white;
-  background-color: #ff7b00;  /* 주황색 */
+  background-color: #ff7b00;
   border: none;
-  border-radius: 8px;
+  border-radius: 3rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 .more-button:hover {
-  background-color: #d96500; /* 조금 더 진한 주황색 */
+  background-color: #ff530f;
 }

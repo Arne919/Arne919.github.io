@@ -1,5 +1,7 @@
 .skill {
-  padding: 80px 20px;
-  background-color: white;
   text-align: center;
+  padding: 80px 20px;
+  background-color: #008cff;
+  scroll-margin-top: 80px; /* 네브바 높이만큼 여백 추가 */
+  min-height: 70vh;
 }
