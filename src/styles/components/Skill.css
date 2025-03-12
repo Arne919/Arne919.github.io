@@ -1,7 +1,100 @@
+/* ✅ 전체 섹션 스타일 */
 .skill {
   text-align: center;
   padding: 80px 20px;
-  background-color: #008cff;
+  background-color: #f5c32c; /* 노란색 배경 */
   scroll-margin-top: 80px; /* 네브바 높이만큼 여백 추가 */
-  min-height: 70vh;
 }
+
+/* ✅ 제목 스타일 */
+.skill-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.skill-icon-link {
+  font-size: 2.2rem;
+  color: #454545;
+}
+
+.skill-icon-text {
+  display: inline-block;
+  border-bottom: 1px solid black;
+}
+
+/* ✅ 스킬 박스 (배경 및 카드 스타일) */
+.skill-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fef5e7; /* 연한 베이지 */
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 900px;
+  margin: 30px auto;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  row-gap: 2rem;
+}
+
+
+
+/* ✅ 카테고리 (아이콘 + 텍스트 + 태그) 가로 정렬 */
+.skill-category {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  /* margin-bottom: 15px; */
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  color: #f5b400;
+  font-size: 1.5rem;
+}
+
+/* ✅ 기술 태그 스타일 */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ✅ 기술 태그 색상 */
+.bootstrap { background-color: #3178c6; }
+.javascript { background-color: #f7df1e; color: black; }
+.python { background-color: #3776ab; }
+.black { background-color: #000; }
+.gray { background-color: #444; }
+.blue { background-color: #4285f4; }
+.red { background-color: #e63946; }
+.dark { background-color: #222; }
+.pink { background-color: #d63384; }
+.sky { background-color: #38bdf8; }
+.green { background-color: #0c9; }
+.yellow { background-color: #f7c32e; color: black; }
+.green2 { background-color: #2f9e44; }
+.orange { background-color: #ff9900; }
+.blue2 { background-color: #005bff; }

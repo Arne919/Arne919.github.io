@@ -1,0 +1,87 @@
+.archiving {
+  padding: 80px 20px;
+  background-color: #1e1e1e; /* 검은 배경 */
+  text-align: center;
+  scroll-margin-top: 80px;
+}
+
+/* ✅ 제목 스타일 */
+.archiving-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.archiving-icon-link {
+  font-size: 2.2rem;
+  color: #c5c5c5;
+}
+
+.archiving-icon-text {
+  display: inline-block;
+  border-bottom: 3px solid white;
+  padding-bottom: 5px;
+}
+
+/* ✅ 카드 레이아웃 */
+.archiving-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+/* ✅ 카드 스타일 (카드 전체를 클릭 가능하게 <a> 태그로 변경) */
+.archiving-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 20rem; /* 카드 크기 조정 */
+  text-align: left;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ 카드 Hover 효과 (크기가 커짐) */
+.archiving-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* ✅ 카드 안의 이미지 (크기 조정) */
+.archiving-image {
+  width: 12rem;
+  height: auto;
+  padding-bottom: 1.7rem;
+}
+
+/* ✅ URL 스타일 (hover 시 밑줄) */
+.archiving-url {
+  font-size: 16px;
+  font-weight: bold;
+  color: #3295ff;
+  text-decoration: none;
+}
+
+.archiving-card:hover .archiving-url {
+  text-decoration: underline;
+}
+
+/* ✅ 카드 설명 */
+.archiving-des {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 0.7rem;
+}

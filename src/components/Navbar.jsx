@@ -44,8 +44,8 @@ function Navbar() {
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           <li onClick={() => scrollToSection("about")}>About me</li>
           <li onClick={() => scrollToSection("skill")}>Skills</li>
+          <li onClick={() => scrollToSection("archiving")}>Archiving</li>
           <li onClick={() => scrollToSection("projects")}>Projects</li>
-          <li onClick={() => scrollToSection("contact")}>Contact</li>
         </ul>
       </div>
     </nav>
