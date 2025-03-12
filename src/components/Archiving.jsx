@@ -15,6 +15,18 @@ const archives = [
   },
 ];
 
+// ✅ 도메인 + 경로만 출력하는 함수
+function getShortURL(fullUrl) {
+  const url = new URL(fullUrl);
+  
+  // Notion의 경우 서브 도메인 제거하고 "notion.so"로 표기
+  if (url.hostname.includes("notion.site")) {
+    return `notion.so${url.pathname.split('-')[0]}`; // Study 부분만 추출
+  }
+
+  return `${url.hostname}${url.pathname}`;
+}
+
 function Archiving() {
   return (
     <section id="archiving" className="archiving">
@@ -26,13 +38,13 @@ function Archiving() {
       <div className="archiving-container">
         {archives.map((archive, index) => (
           <a key={index} href={archive.url} target="_blank" rel="noopener noreferrer" className="archiving-card">
-          <img src={archive.image} alt={archive.name} className="archiving-image" />
+            <img src={archive.image} alt={archive.name} className="archiving-image" />
 
-          <div className="archiving-des">{archive.description}</div>
-          <span className="archiving-url">
-            {new URL(archive.url).hostname}
-          </span>
-        </a>
+            <span className="archiving-url">
+              {getShortURL(archive.url)}
+            </span>
+            <div className="archiving-des">{archive.description}</div>
+          </a>
         ))}
       </div>
     </section>

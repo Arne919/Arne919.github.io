@@ -53,12 +53,12 @@
 }
 
 .skill-header {
+  width: 130px;
   display: flex;
   align-items: center;
   font-size: 18px;
   font-weight: bold;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 15px;
 }
 
 .icon {

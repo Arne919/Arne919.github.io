@@ -1,19 +1,144 @@
+/* ✅ 전체 섹션 스타일 */
 .projects {
+  text-align: center;
   padding: 80px 20px;
   background-color: #f5f5f5;
-  text-align: center;
+  scroll-margin-top: 80px;
 }
 
+/* ✅ 제목 스타일 */
+.project-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.project-icon-link {
+  font-size: 2.2rem;
+  color: #454545;
+}
+
+.project-icon-text {
+  display: inline-block;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+/* ✅ 프로젝트 리스트 */
 .project-list {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.project {
-  width: 200px;
-  padding: 20px;
-  background-color: white;
+/* ✅ 프로젝트 카드 */
+.project-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: left;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ✅ 카드 Hover 효과 (살짝 커지게) */
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ 프로젝트 카테고리 */
+.project-category {
+  background: #ff6b6b;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 5px;
+}
+
+/* ✅ 프로젝트 날짜 */
+.project-date {
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px; /* 👈 밑줄과의 간격 추가 */
+  margin-bottom: 12px; /* 👈 날짜 아래 여백 추가 */
+}
+
+/* ✅ 프로젝트 제목 */
+.project-title-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ✅ 프로젝트 상세 설명 */
+.project-details {
+  font-size: 14px;
+  color: #333;
+  padding-left: 15px;
+}
+
+.project-details li {
+  margin-bottom: 5px;
+}
+
+/* ✅ 프로젝트 링크 */
+.project-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* ✅ 기술 스택 태그 */
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tag {
+  background: #ffe066;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* ✅ 버튼 스타일 */
+.project-buttons {
+  margin-top: 10px;
+}
+
+.readme-button {
+  background: #222;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.readme-button:hover {
+  background: #444;
 }

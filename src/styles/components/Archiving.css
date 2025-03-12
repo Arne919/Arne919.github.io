@@ -64,24 +64,26 @@
 .archiving-image {
   width: 12rem;
   height: auto;
-  padding-bottom: 1.7rem;
+  padding-bottom: 1.5rem;
 }
 
 /* ✅ URL 스타일 (hover 시 밑줄) */
 .archiving-url {
   font-size: 16px;
   font-weight: bold;
-  color: #3295ff;
+  color: #52a5fe;
   text-decoration: none;
+  margin-bottom: 1rem;
 }
 
 .archiving-card:hover .archiving-url {
   text-decoration: underline;
 }
 
+
 /* ✅ 카드 설명 */
 .archiving-des {
   font-size: 14px;
   color: #333;
-  margin-bottom: 0.7rem;
+  /* margin-bottom: 0.5rem; */
 }
