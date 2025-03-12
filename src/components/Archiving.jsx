@@ -4,12 +4,12 @@ import "../styles/components/Archiving.css";
 
 const archives = [
   {
-    image: "/src/assets/images/github-logo.png", // 로컬 이미지 또는 외부 URL 사용 가능
+    image: "./assets/images/github-logo.png", // 로컬 이미지 또는 외부 URL 사용 가능
     description: "소스 코드 저장소",
     url: "https://github.com/Arne919",
   },
   {
-    image: "/src/assets/images/notion-logo.png", // 노션 이미지
+    image: "./assets/images/notion-logo.png", // 노션 이미지
     description: "공부 목적의 노션",
     url: "https://flash-paprika-6cf.notion.site/Study-1a5080d6bc13809b9a52def0731600ca?pvs=4",
   },
