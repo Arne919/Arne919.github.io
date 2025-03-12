@@ -11,7 +11,7 @@ const archives = [
   {
     image: "/src/assets/images/notion-logo.png", // 노션 이미지
     description: "공부 목적의 노션",
-    url: "https://www.notion.so/Study-1a5080d6bc13809b9a52def0731600ca",
+    url: "https://flash-paprika-6cf.notion.site/Study-1a5080d6bc13809b9a52def0731600ca?pvs=4",
   },
 ];
 
