@@ -6,6 +6,8 @@ import Skill from "./components/Skill";
 import Archiving from "./components/Archiving";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop"; // 추가
+import "./styles/global.css"; // 스타일 추가
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Skill />
       <Archiving />
       <Projects />
+      <ScrollToTop /> {/* 스크롤 버튼 추가 */}
       <Footer />
     </>
   );

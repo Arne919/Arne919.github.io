@@ -8,65 +8,27 @@ function About() {
       {/* ✅ 제목을 더 보기 좋게 정렬 */}
       <div className="about-title">
         <FaLink className="about-icon-link" /> 
-        <div className="about-icon-text">
-          ABOUT ME
-        </div>
+        <div className="about-icon-text">ABOUT ME</div>
       </div>
 
       <div className="about-container">
-        {/* 왼쪽 */}
-        <div className="abount-column">
-          <div className="about-item">
-            <FaUser className="about-icon" />
+        {/* ✅ 모든 정보 아이템을 하나의 배열로 정리 */}
+        {[
+          { icon: <FaUser />, label: "이름", value: "강혜경" },
+          { icon: <FaCalendarAlt />, label: "생년월일", value: "96.09.19" },
+          { icon: <FaMapMarkerAlt />, label: "위치", value: "부산광역시 강서구" },
+          { icon: <FaPhone />, label: "연락처", value: "010-5695-6890" },
+          { icon: <FaEnvelope />, label: "이메일", value: "ghgghg96@naver.com" },
+          { icon: <FaGraduationCap />, label: "학력", value: "울산대학교 (수학과)" },
+        ].map((item, index) => (
+          <div className="about-item" key={index}>
+            <div className="about-icon">{item.icon}</div>
             <div className="about-qa">
-              <div className="about-q">이름</div>
-              <div className="about-a">강혜경</div>
+              <div className="about-q">{item.label}</div>
+              <div className="about-a">{item.value}</div>
             </div>
           </div>
-          <div className="about-item">
-            <FaPhone className="about-icon" />
-            <div className="about-qa">
-              <div className="about-q">연락처</div>
-              <div className="about-a">010-5695-6890</div>
-            </div>
-          </div>
-        </div>
-
-        {/* 가운데 */}
-        <div className="abount-column">
-          <div className="about-item">
-            <FaCalendarAlt className="about-icon" />
-            <div className="about-qa">
-              <div className="about-q">생년월일</div>
-              <div className="about-a">96.09.19</div>
-            </div>
-          </div>
-          <div className="about-item">
-            <FaEnvelope className="about-icon" />
-            <div className="about-qa">
-              <div className="about-q">이메일</div>
-              <div className="about-a">ghgghg96@naver.com</div>
-            </div>
-          </div>
-        </div>
-
-        {/* 오른쪽 */}
-        <div className="abount-column">
-          <div className="about-item">
-            <FaMapMarkerAlt className="about-icon" />
-            <div className="about-qa">
-              <div className="about-q">위치</div>
-              <div className="about-a">부산광역시 강서구</div>
-            </div>
-          </div>
-          <div className="about-item">
-            <FaGraduationCap className="about-icon" />
-            <div className="about-qa">
-              <div className="about-q">학력</div>
-              <div className="about-a">울산대학교 (수학과)</div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

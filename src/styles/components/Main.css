@@ -1,3 +1,4 @@
+/* ✅ 기본 스타일 유지 */
 .main {
   text-align: center;
   padding: 6rem 0 0 0;
@@ -9,50 +10,45 @@
   align-items: center;
   justify-content: center;
   background-color: rebeccapurple;
+  flex-wrap: wrap; /* ✅ 추가 */
+  background: url("/mainbackground.png") no-repeat center center/cover; /* ✅ 배경 이미지 적용 */
+  background-size: cover;
+  color: white; /* ✅ 텍스트 색상을 밝게 설정 */
+  position: relative;
+  /* overflow: hidden; */
 }
 
-/* ✅ 타이핑 영역 크기 고정 */
+/* ✅ 타이핑 영역 크기 수정 (반응형 적용) */
 .typeit {
-  width: 940px;
-  height: 120px;
+  width: 80%; /* ✅ 940px 고정값 제거 -> 가변 크기 */
+  max-width: 940px; /* ✅ 최대 너비 제한 */
+  height: auto;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* 타이핑 애니메이션 스타일 */
+/* ✅ 타이핑 애니메이션 스타일 */
 .typing-container {
   font-size: 2.5rem;
   font-weight: 900;
   display: inline-block;
-  white-space: nowrap;
+  white-space: normal; /* ✅ 자동 줄바꿈 허용 */
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  max-width: 100%;
+  word-break: break-word; /* ✅ 긴 단어 줄바꿈 */
 }
 
-/* 줄바꿈 시 적용 */
+/* ✅ 줄바꿈 적용 */
 .typing-line {
   display: block;
   text-align: center;
+  word-wrap: break-word; /* ✅ 추가 */
 }
 
-/* 개별 문자 스타일 */
-.typing-char {
-  opacity: 0;
-  animation: fadeIn 0.3s forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* 커서 효과 */
+/* ✅ 커서 효과 */
 .cursor {
   font-size: 3rem;
   font-weight: bold;
@@ -61,47 +57,36 @@
   display: inline-block;
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
 /* ✅ 구분선(hr) 스타일 */
 .custom-hr {
-  width: 20%;
-  height: 0.1rem;
+  width: 50%; /* ✅ 기존 20% -> 50%로 늘려서 더 길게 */
+  max-width: 300px; /* ✅ 최대 너비 제한 */
+  height: 1.2px; /* ✅ 높이(두께) 조정 */
   border: none;
-  background: rgba(255, 255, 255, 0.5);
-  margin: 3rem auto 1rem auto;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8); /* ✅ 가독성을 위해 투명도 줄이기 */
+  margin: 1.5rem auto; /* ✅ 위아래 여백 조정 */
+  /* border-radius: 10px; */
 }
 
-/* 반응형 */
-@media screen and (max-width: 1024px) {
-  .typeit {
-    width: 80%;
-    height: 100px;
+
+.description {
+  max-width: 70%;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  word-break: keep-all; /* 자동 줄바꿈 허용 */
+}
+
+@media screen and (max-width: 600px) {
+  .description {
+    white-space: pre-line; /* ✅ 600px 이하일 때 자동 줄바꿈 적용 */
   }
 }
 
-@media screen and (max-width: 768px) {
-  .typeit {
-    width: 90%;
-    height: 90px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .typeit {
-    width: 95%;
-    height: 80px;
-  }
-}
 
 /* 버튼 스타일 */
 .more-button {
-  margin-top: 20px;
+  margin: 20px 0 10px 0;
   padding: 12px 24px;
   font-size: 18px;
   font-weight: bold;
@@ -115,4 +100,55 @@
 
 .more-button:hover {
   background-color: #ff530f;
+}
+
+/* ✅ 반응형 적용 */
+@media screen and (max-width: 1024px) {
+  .typeit {
+    width: 90%;
+  }
+  .typing-container {
+    font-size: 2rem;
+  }
+  .cursor {
+    font-size: 2.5rem;
+  }
+  .more-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .typeit {
+    width: 95%;
+  }
+  .typing-container {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  .cursor {
+    font-size: 2rem;
+  }
+  .more-button {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .typeit {
+    width: 100%;
+  }
+  .typing-container {
+    font-size: 1.5rem;
+    letter-spacing: 0px; /* ✅ 좁은 화면에서 글자 간격 줄이기 */
+  }
+  .cursor {
+    font-size: 1.8rem;
+  }
+  .more-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }

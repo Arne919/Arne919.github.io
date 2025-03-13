@@ -1,0 +1,56 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.6); /* 불투명한 흰색 배경 */
+  border: 3.5px solid rgba(50, 50, 50, 0.8); /* 회색 테두리 */
+  border-radius: 8px; /* 둥근 모서리 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* ✅ 보이도록 활성화 */
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ✅ 화살표 색상 */
+.arrow-icon {
+  color: rgba(50, 50, 50, 0.8);
+}
+
+/* ✅ 태블릿 (768px ~ 1024px) */
+@media screen and (max-width: 1024px) {
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+    border-radius: 6px; /* 둥근 정도 감소 */
+  }
+
+  .arrow-icon {
+    font-size: 22px;
+  }
+}
+
+/* ✅ 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(50, 50, 50, 0.8);
+    border-radius: 5px;
+  }
+
+  .arrow-icon {
+    font-size: 20px;
+  }
+}
