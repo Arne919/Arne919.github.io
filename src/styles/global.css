@@ -1,6 +1,6 @@
 /* 전체 페이지 스타일 */
 body {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -15,4 +15,23 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans KR';
+  src: url('/fonts/IBMPlexSansKR-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans KR';
+  src: url('/fonts/IBMPlexSansKR-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ✅ 폰트 적용 */
+body {
+  font-family: 'IBM Plex Sans KR', sans-serif;
 }

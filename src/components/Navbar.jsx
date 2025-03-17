@@ -4,6 +4,7 @@ import "../styles/components/Navbar.css";
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 950);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,11 +15,30 @@ function Navbar() {
       }
     };
 
+    const handleResize = () => {
+      if (window.innerWidth > 950) {
+        setMenuOpen(false); // ✅ 950px 이상에서는 자동으로 메뉴 닫기
+        setIsMobile(false);
+      } else {
+        setIsMobile(true);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    if (!menuOpen) {
+      setScrolled(true); // ✅ 햄버거 메뉴 열리면 네비게이션을 흰색으로 변경
+    }
+  };
 
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({
@@ -28,19 +48,16 @@ function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled || (isMobile && menuOpen) ? "scrolled" : ""}`}>
       <div className="navbar-container">
-        {/* 로고 클릭 시 메인 섹션으로 이동 */}
         <div className="logo" onClick={() => scrollToSection("main")}>
           KHK's Portfolio
         </div>
 
-        {/* 햄버거 메뉴 버튼 (1000px 이하에서만 보임) */}
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="hamburger" onClick={toggleMenu}>
           ☰
         </div>
 
-        {/* 네비게이션 링크 (1000px 이하일 때는 숨김) */}
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           <li onClick={() => scrollToSection("about")}>About me</li>
           <li onClick={() => scrollToSection("skill")}>Skills</li>
