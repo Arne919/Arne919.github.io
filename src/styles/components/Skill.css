@@ -41,19 +41,17 @@
   row-gap: 2rem;
 }
 
-
-
 /* ✅ 카테고리 (아이콘 + 텍스트 + 태그) 가로 정렬 */
 .skill-category {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 2rem;
-  /* margin-bottom: 15px; */
+  flex-wrap: wrap;
 }
 
 .skill-header {
-  width: 130px;
+  min-width: 130px;
   display: flex;
   align-items: center;
   font-size: 18px;
@@ -71,6 +69,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: flex-start; /* 태그도 좌측 정렬 */
 }
 
 .tag {
@@ -98,3 +97,62 @@
 .green2 { background-color: #2f9e44; }
 .orange { background-color: #ff9900; }
 .blue2 { background-color: #005bff; }
+
+/* ✅ 반응형 스타일 */
+@media (max-width: 768px) {
+  .skill-title {
+    font-size: 2.5rem;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .skill-box {
+    padding: 1.5rem;
+    margin: 20px auto;
+    width: 90%;
+  }
+
+  .skill-category {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .skill-header {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .skill-tags {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-title {
+    font-size: 2.5rem;
+    
+  }
+
+  .skill-box {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .skill-category {
+    gap: 0.8rem;
+  }
+
+  .skill-header {
+    font-size: 16px;
+  }
+
+  .icon {
+    font-size: 1.3rem;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
