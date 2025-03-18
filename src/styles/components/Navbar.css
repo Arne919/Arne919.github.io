@@ -1,27 +1,34 @@
-/* 🟢 네비게이션 기본 스타일 */
+/* ✅ 모든 요소 기본 여백 제거 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ✅ 네비게이션 기본 설정 (고정 높이 80px) */
 .navbar {
   width: 100%;
+  height: 80px; /* ✅ 네비게이션 높이 80px 유지 */
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0.8rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   background-color: transparent;
   color: gray;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* 🟢 스크롤 시 배경 변경 */
+/* ✅ 스크롤 시 및 햄버거 메뉴 열릴 때 배경 흰색 유지 */
 .navbar.scrolled {
   background-color: white;
   color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 🟢 네비게이션 상단에 딱 붙이기 */
+/* ✅ 네비게이션 컨테이너 */
 .navbar-container {
   width: 100%;
   max-width: 1050px;
@@ -31,107 +38,105 @@
   padding: 0 30px;
 }
 
-/* 🟢 로고 스타일 */
+/* ✅ 로고 스타일 */
 .logo {
   font-size: 22px;
   font-weight: bold;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.8); /* 기본 색상 회색 */
+  color: rgba(255, 255, 255, 0.8);
   transition: color 0.3s ease-in-out;
 }
 
-/* 🟢 스크롤 후 로고 색상 변경 */
+/* ✅ 햄버거 메뉴 열릴 때 & 모바일일 때 로고 색상 검정 */
+.black-logo {
+  color: black !important;
+}
+
+/* ✅ 스크롤 후 로고 색상 변경 */
 .navbar.scrolled .logo {
-  color: black;  /* 스크롤 후 기본 색상 검은색 */
+  color: black;
 }
 
-/* 🟢 반응형에서 로고가 안 보이는 문제 해결 */
-@media screen and (max-width: 950px) {
-  .logo {
-    color: black; /* ✅ 햄버거 메뉴 활성화 시 검정색으로 변경 */
-  }
-}
-
-/* 🟢 네비게이션 링크 */
+/* ✅ 네비게이션 링크 */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 40px;
 }
 
+/* ✅ 네비게이션 링크 기본 색상 */
 .nav-links li {
   cursor: pointer;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.5);  /* 기본 색상 회색 */
+  color: rgba(255, 255, 255, 0.5);
   transition: color 0.3s ease-in-out;
 }
 
-/* 🟢 네비게이션 링크 호버 시 */
-.nav-links li:hover {
-  color: white;
-}
-
-/* 🟢 스크롤 후 네비게이션 기본 색상 */
+/* ✅ 스크롤 후 색상 변경 */
 .navbar.scrolled .nav-links li {
-  color: black;  /* 스크롤 후 기본 색상 검은색 */
+  color: black;
 }
 
-/* 🟢 스크롤 후 네비게이션 호버 시 */
 .navbar.scrolled .nav-links li:hover {
-  color: #FF7F00;  /* 주황색 */
+  color: #FF7F00;
 }
 
-/* 🟢 햄버거가 나타나는 화면 크기(950px 이하)에서 배경을 흰색으로 변경 */
-@media screen and (max-width: 950px) {
-  .navbar {
-    background-color: white; /* ✅ 배경을 흰색으로 변경 */
-    color: black;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-}
-
-/* 🟢 햄버거 버튼 기본적으로 숨김 */
+/* ✅ 햄버거 버튼 */
 .hamburger {
   display: none;
   cursor: pointer;
   font-size: 25px;
-  color: rgba(255, 255, 255, 0.5);  /* 기본 색상 회색 */
+  color: white;
   z-index: 1100;
   transition: color 0.3s ease-in-out;
 }
 
-/* 🟢 반응형에서 햄버거 버튼 보이게 */
+/* ✅ 반응형 설정 */
 @media screen and (max-width: 950px) {
   .hamburger {
     display: block;
-    color: black; /* ✅ 배경 흰색으로 변경되었으므로 햄버거 색도 검정 */
+    color: black;
   }
-}
 
-/* 🟢 반응형 네비게이션 메뉴 */
-@media screen and (max-width: 950px) {
+  .navbar {
+    background-color: white; /* ✅ 햄버거 토글 생성 시 배경 흰색 유지 */
+    color: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ✅ 햄버거 메뉴 (네비게이션과 완전히 붙음) */
   .nav-links {
     flex-direction: column;
     position: absolute;
-    top: 60px; /* ✅ 네비게이션 아래에 붙도록 조정 */
+    top: 80px; /* ✅ 네비게이션과 정확히 붙음 */
     left: 0;
     width: 100%;
-    background: white; /* ✅ 햄버거 메뉴 배경 흰색 */
+    background: white;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    align-items: center;
+    align-items: flex-start;
     padding: 0;
-    gap: 20px;
-    border-radius: 0px 0px 10px 10px;
+    gap: 15px;
     max-height: 0;
     overflow: hidden;
-    display: none; /* ✅ 메뉴가 보이지 않도록 설정 */
-    transition: transform 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(0);
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    display: flex;
   }
 
+  /* ✅ 햄버거 메뉴 펼칠 때 부드러운 애니메이션 */
   .nav-links.active {
-    display: flex; /* ✅ 메뉴가 보이도록 설정 */
     max-height: 400px;
-    transform: translateY(0);
-    padding: 20px 0;
+    opacity: 1;
+    padding: 15px 20px;
+  }
+
+  /* ✅ 모바일 네비게이션 링크 스타일 */
+  .nav-links li {
+    font-size: 18px;
+    color: black;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
   }
 }

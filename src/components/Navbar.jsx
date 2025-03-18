@@ -8,16 +8,12 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     const handleResize = () => {
       if (window.innerWidth > 950) {
-        setMenuOpen(false); // ✅ 950px 이상에서는 자동으로 메뉴 닫기
+        setMenuOpen(false); // ✅ 폭이 넓어지면 메뉴 자동 닫힘
         setIsMobile(false);
       } else {
         setIsMobile(true);
@@ -26,7 +22,7 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
@@ -34,23 +30,18 @@ function Navbar() {
   }, []);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    if (!menuOpen) {
-      setScrolled(true); // ✅ 햄버거 메뉴 열리면 네비게이션을 흰색으로 변경
-    }
+    setMenuOpen((prev) => !prev);
   };
 
   const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({
-      behavior: "smooth",
-    });
-    setMenuOpen(false); // 클릭하면 메뉴 닫힘
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
   };
 
   return (
-    <nav className={`navbar ${scrolled || (isMobile && menuOpen) ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled || menuOpen || isMobile ? "scrolled" : "transparent"}`}>
       <div className="navbar-container">
-        <div className="logo" onClick={() => scrollToSection("main")}>
+        <div className={`logo ${menuOpen || isMobile ? "black-logo" : ""}`} onClick={() => scrollToSection("main")}>
           KHK's Portfolio
         </div>
 
