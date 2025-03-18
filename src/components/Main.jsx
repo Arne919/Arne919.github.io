@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/components/Main.css";
 
 function Main() {
-  const text = `안녕하세요 :)\n주니어 프론트엔드 개발자 강혜경입니다.`; // 개행 포함
+  const text = `안녕하세요 :)\n신입 프론트엔드 개발자 강혜경입니다.`; // 개행 포함
   const [displayText, setDisplayText] = useState("");
   const [index, setIndex] = useState(0);
 
